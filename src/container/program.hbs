@@ -1,0 +1,75 @@
+<div>
+    {{#with program}}   
+        <section>
+            {{#with excursion}}
+            <h1>{{name}}</h1>
+            <h2> {{#with location }}
+                {{city}}, {{country}}
+                {{/with}}
+            </h2>
+            <p>{{date}}</p>
+        </section>        
+        <hr>
+        <hr>
+        <section>
+            {{#each program}}
+            <ul>
+                <li>
+                    <h2>{{name}}</h2>
+                    {{type}}, ({{duration}}),
+                    {{#with details}}
+                    {{#with museum}}
+                    <h3>{{name}}</h3>
+
+                    {{#with location}}
+                    <address>
+                        {{address}},{{city}},{{country}}
+                    </address>
+                    <br>
+                    {{/with}}
+                    {{#each exhibits}}
+                    <ul>
+                        <li>
+                            <b>{{name}}</b>,
+                            {{artist}},
+                            <q>{{description}}</q>,
+                            {{#if audio_guide}}Audio guide{{/if}}
+                        </li>
+                    </ul>
+                    {{/each}}
+                    {{/with}}
+                    {{> guide}}
+                    {{/with}}
+                    {{#with details}}
+                    {{#with venue}}
+                    <div>
+                        <h3>{{name}}</h3>
+
+                        {{#with location}}
+                        <address>
+                            {{address}},{{city}},{{country}}
+                        </address>
+                    </div>
+                    {{/with}}
+                    {{/with}}
+                    <br>
+                    {{#each performers}}
+                    <ul>
+                        <li>
+                            <b>{{name}}</b>,
+                            {{type}}
+                        </li>
+                    </ul>
+                    {{/each}}
+                    <br>
+                    <br>
+                    {{> guide}}
+                    {{/with}}
+                    <br>
+                </li>
+            </ul>
+            {{/each}}
+        </section>
+        {{/with}}
+        {{/with}}
+</div>
