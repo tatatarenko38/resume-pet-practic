@@ -457,7 +457,7 @@ router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
 
   res.render('program', {
-    layout: 'basic',
+    layout: 'program',
     program: {
       excursion: {
         name: 'Cultural Tour',
