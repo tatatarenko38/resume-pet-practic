@@ -1,0 +1,152 @@
+<div>
+    <div>
+        <h1>{{make}} {{ model}}</h1>
+        <h2>{{year}}</h2>
+        <p><b>Color: {{color}}</b></p>
+    </div>
+    <br>
+    <hr>
+    <hr>
+    <div>
+        <h2>Features</h2>
+        {{#with features}}
+
+        <h3>Interior</h3>
+        {{#with interior}}
+        <h4>Seats</h4>
+
+        {{#with seats}}
+        <p>material: {{material}} </p>
+        <p>color: {{color}}</p>
+        <p>{{#if heated}} heated {{else}} {{/if}}</p>
+        <p>{{#if ventilated}} ventilated {{else}} {{/if}}</p>
+        {{/with}}
+
+        <h4>Dashboard</h4>
+        {{#with dashboard}}
+        <P>material: {{material}}</P>
+        <p>color: {{color}}</p>
+        <h5>display:</h5>
+        {{#with display}}
+        <p> type: {{type}}</p>
+        <p> resolution: {{ resolution}}</p>
+        <p>{{#if touchscreen}} touchscreen {{else}} {{/if}}</p>
+        {{/with}}
+        {{/with}}
+
+        <h4>Audio:</h4>
+        {{#with audio}}
+        <p> system {{system}}</p>
+        <p> speakers {{speakers}}</p>
+        <p>{{#if subwoofer}}subwoofer {{else}} {{/if}}</p>
+        <p>{{#if bluetooth}} bluetooth {{else}} {{/if}}</p>
+        <p>{{#if USB}} USB {{else}} {{/if}}</p>
+        {{/with}}
+
+        {{/with}}
+
+
+        <br>
+        <hr>
+        <h3>Exterior</h3>
+        {{#with exterior}}
+
+        <h4>Wheels:</h4>
+        {{#with wheels}}
+        <p>size: {{size}}</p>
+        <p>type: {{type}}</p>
+        <p>color: {{color}}</p>
+        {{/with}}
+
+        <h4>Headlights:</h4>
+        {{#with headlights}}
+        <p>type: {{type}}</p>
+        <p>brightness: {{brightness}}</p>
+        <p>{{#if automatic}} automatic {{else}} {{/if}}</p>
+        {{/with}}
+
+        <h4>Sunroof</h4>
+        {{#with sunroof}}
+        <p>type: {{type}}</p>
+        <p>size: {{size}}</p>
+        <p>{{#if automatic}} automatic {{else}} {{/if}}</p>
+
+        {{/with}}
+
+
+        {{/with}}
+        <h3>Safety</h3>
+        {{#with safety}}
+
+        <h4>Airbags:</h4>
+        {{#with airbags}}
+        <p>front: {{front}}</p>
+        <p>side: {{side}}</p>
+        <p>knee: {{knee}}</p>
+        <p>rear: {{rear}}</p>
+        {{/with}}
+
+        <h4>Assistance:</h4>
+        {{#with assistance}}
+        <p>{{#if blind_spot_monitoring}} blind spot monitoring {{else}} {{/if}}</p>
+        <p>{{#if rear_cross_traffic_alert}} rear cross traffic alert {{else}} {{/if}}</p>
+        <p>{{#if lane_departure_warning}} lane departure warning {{else}} {{/if}}</p>
+        <p>{{#if adaptive_cruise_control}} adaptive cruise control {{else}} {{/if}}</p>
+        <p>{{#if collision_warning}} collision warning {{else}} {{/if}}</p>
+        {{/with}}
+
+        {{/with}}
+
+        {{/with}}
+    </div>
+    <hr>
+    <div>
+        <h2>Engine</h2>
+        {{#with engine}}
+        <p>type: {{type}}</p>
+        <p>displacement: {{displacement}}</p>
+        <p>horsepower: {{horsepower}}</p>
+        <p>torque: {{torque}}</p>
+
+        <h3>Transmission:</h3>
+        {{#with transmission}}
+        <p>type: {{type}} gears: {{gears}}</p>
+        {{/with}}
+
+        {{/with}}
+
+        <h2>Fuel economy</h2>
+        {{#with fuel_economy}}
+        <p>city: {{city}}</p>
+        <p>highway: {{highway}}</p>
+        <p>combined: {{combined}}</p>
+        {{/with}}
+
+
+        <h2>Price</h2>
+        {{#with price}}
+
+        <button type="button" class="btn btn-danger"> base: </button> 
+        
+        <button type="button" class="btn btn-danger"> {{base}} </button> 
+       
+        <p> destination: {{destination}}</p>
+
+        <h3>Options:</h3>
+        {{#with options}}
+        <p>navigation: {{navigation}}</p>
+        <p>moonroof: {{moonroof}}</p>
+        <p>premium paint: {{premium_paint}}</p>
+        {{/with}}
+        
+        <button type="button" class="btn btn-danger"> total: </button> 
+        
+        <button type="button" class="btn btn-danger"> {{total}} </button> 
+        {{/with}}
+
+
+
+
+    </div>
+
+</div>
