@@ -22,58 +22,62 @@
     <header>
         <h1 class='mt-5 mb-5'>{{header}}</h1>
     </header>
-    <main class="col-12">
+    <main class="row">
         <div class="col-8">
 
-        {{#with contacts_data}}
-        <div>
-            <h2 class="pb-3">{{title}}</h2>
-            {{#each buttons}}
-            {{#if isPrimary}}
-            <button class="btn btn-warning">{{text}}</button>
-            {{/if}}
-            {{#if isOutline}}
-            <button class="btn btn-outline-warning">{{text}}</button>
-            {{/if}}
-            {{/each}}
-        </div>
-
-
-        <div class="">
-            {{#with form}}
+            {{#with contacts_data}}
             <div>
-                {{#with input}}
-
-                {{> usershop data=surname}}
-                {{> usershop data=name}}
-                {{> usershop data=phone}}
-                {{> usershop data=email}}
-
-                {{/with}}
+                <h2 class="pb-3">{{title}}</h2>
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <button class="btn btn-warning">{{text}}</button>
+                {{/if}}
+                {{#if isOutline}}
+                <button class="btn btn-outline-warning">{{text}}</button>
+                {{/if}}
+                {{/each}}
             </div>
 
-        </div>
-        <hr class="my-3">
-        <div class="">
-            {{#each switch}}
 
-            <div class="form-check form-switch my-3">
-                <label class="form-check-label">{{text}}</label>
-                <input type="checkbox" class="form-check-input">
+            <div >
+                {{#with form}}
+                <div class="row">
+                    {{#with input}}
+
+                    {{> usershop data=surname}}
+                    {{> usershop data=name}}
+                    {{> usershop data=phone}}
+                    {{> usershop data=email}}
+
+                    {{/with}}
+                </div>
 
             </div>
+            <hr class="my-3">
+            <div class="">
+                {{#each switch}}
 
-            {{/each}}
+                <div class="form-check form-switch my-3">
+                    <label class="form-check-label">{{text}}</label>
+                    <input type="checkbox" class="form-check-input">
 
+                </div>
+
+                {{/each}}
+
+            </div>
+            {{/with}}
+            {{/with}}
+
+            <hr class="my-3">
+           
         </div>
-        {{/with}}
-        {{/with}}
-        </div>
-        <hr class="my-3">
+
+
 
 
         <div class="col-4">
-            <div class="card">
+            <div class="card mb-3" >
                 <div class="card-body">
                     {{#each action_block}}
                     <div>
@@ -140,4 +144,42 @@
         </div>
     </main>
 
+</div>
+ <div>
+                {{#with delivery}}
+                <h2 class="pb-3">{{title}}</h2>
+                {{#each select}}
+                <div class="card">
+                    <div class="card-body">
+                        <div >
+                            <label class="form-label">{{label}}</label>
+                            <select class="form-select form-select-lg">
+                                <option selected>{{ placeholder}} </option>
+                                {{#each options}}
+                                {{value}} {{text}}
+                                {{/each}}
+                               
+                            </select>
+                        </div>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+            <div>
+                {{#with coupon}}
+                {{/with}}
+            </div>
+            <div>
+                {{#with quiz}}
+                {{/with}}
+            </div>
+
+
+
+
+
+<div>
+    {{#each footer}}
+    {{/each}}
 </div>
