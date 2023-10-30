@@ -1,0 +1,75 @@
+<div class='m-3'>
+    {{#with navigation}}
+    <div class='card'>
+        <div class='card-body'>
+            <div class='nav'>
+                {{#each links}}
+                <div class='nav-link'>
+                    {{#if href}}
+                    <a href='href'>{{text}}</a>
+                    {{else}}
+
+                    <a href='href' class='nav-link disabled'>{{text}}</a>
+
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+    <header>
+        <h1 class='mt-5 mb-5'>{{header}}</h1>
+    </header>
+    <main class="col-8">
+
+        {{#with contacts_data}}
+        <div>
+            <h2 class="pb-3">{{title}}</h2>
+            {{#each buttons}}
+            {{#if isPrimary}}
+            <button class="btn btn-warning">{{text}}</button>
+            {{/if}}
+            {{#if isOutline}}
+            <button class="btn btn-outline-warning">{{text}}</button>
+            {{/if}}
+            {{/each}}
+        </div>
+
+
+        <div class="">
+            {{#with form}}
+            <div class="col-6">
+                {{#with input}}
+
+                {{> usershop data=surname}}
+                {{> usershop data=name}}
+                {{> usershop data=phone}}
+                {{> usershop data=email}}
+
+                {{/with}}
+            </div>
+
+        </div>
+        <hr class="my-3">
+        <div>
+            {{#with switch}}
+
+            <div class="form-check form-switch">
+                <label class="form-check-label">{{text}}</label>
+                <input type="checkbox" class="form-check-input">
+            </div>
+            <div class="form-check form-switch">
+                <label class="form-check-label">{{text}}</label>
+                <input type="checkbox" class="form-check-input">
+            </div>
+
+            {{/with}}
+
+        </div>
+        {{/with}}
+        {{/with}}
+    </main>
+
+</div>
