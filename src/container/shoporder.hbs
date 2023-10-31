@@ -39,7 +39,7 @@
             </div>
 
 
-            <div >
+            <div>
                 {{#with form}}
                 <div class="row">
                     {{#with input}}
@@ -54,7 +54,7 @@
 
             </div>
             <hr class="my-3">
-            <div class="">
+            <div>
                 {{#each switch}}
 
                 <div class="form-check form-switch my-3">
@@ -70,14 +70,89 @@
             {{/with}}
 
             <hr class="my-3">
-           
+            <div>
+                {{#with delivery}}
+                <h2 class="pb-3">{{title}}</h2>
+
+                <div class="card">
+                    <div class="card-body">
+                        {{#each select}}
+                        <div class="col-6">
+                            <label class="form-label">{{label}}</label>
+
+                            <select class="form-select form-select-lg">
+
+                                <option selected>{{ placeholder }}</option>
+
+                                {{#each options}}
+                                <option>
+                                    {{value}} {{text}}
+                                </option>
+                                {{/each}}
+
+                            </select>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+
+                {{#each delivery_type}}
+                <div class="form-check pt-3">
+
+                    <label class="form-check-label">{{type}}</label>
+                    <input type="radio" class="form-check-input">
+
+                </div>
+                {{/each}}
+                <hr class="my-3">
+
+                {{#with payment}}
+                <h2 class="mb-3">{{title}}</h2>
+                {{#each list}}
+                <div class="form-check pt-3">
+
+                    <label class="form-check-label">{{type}}</label>
+                    <input type="radio" class="form-check-input">
+                    <p>{{description}}</p>
+
+                </div>
+
+
+                {{/each}}
+                {{/with}}
+                <hr class="my-3">
+                <div>
+                    {{#with contact}}
+                    <h2>{{title}}</h2>                  
+
+                        <div class="row">
+                            {{> usershop data=surname}}
+                            {{> usershop data=name}}
+                            {{> usershop data=phone}}
+                            {{> usershop data=email}}
+                        </div>                    
+                     {{/with}}
+                </div>               
+            </div>
+       
+        <div>
+            {{#with coupon}}
+            {{/with}}
         </div>
+        <div>
+            {{#with quiz}}
+            {{/with}}
+        </div>
+         </div>
+
+
+
 
 
 
 
         <div class="col-4">
-            <div class="card mb-3" >
+            <div class="card mb-3">
                 <div class="card-body">
                     {{#each action_block}}
                     <div>
@@ -101,7 +176,7 @@
 
 
 
-            <div class=>
+            <div>
                 {{#with total}}
                 <div class="list-group">
                     <div class="list-group-item">
@@ -134,52 +209,11 @@
                         </div>
                         {{/each}}
                     </div>
-
-
-
-
-                    {{/with}}
+                    
                 </div>
+                {{/with}}
             </div>
         </div>
     </main>
-
 </div>
- <div>
-                {{#with delivery}}
-                <h2 class="pb-3">{{title}}</h2>
-                {{#each select}}
-                <div class="card">
-                    <div class="card-body">
-                        <div >
-                            <label class="form-label">{{label}}</label>
-                            <select class="form-select form-select-lg">
-                                <option selected>{{ placeholder}} </option>
-                                {{#each options}}
-                                {{value}} {{text}}
-                                {{/each}}
-                               
-                            </select>
-                        </div>
-                    </div>
-                    {{/each}}
-                    {{/with}}
-                </div>
-            </div>
-            <div>
-                {{#with coupon}}
-                {{/with}}
-            </div>
-            <div>
-                {{#with quiz}}
-                {{/with}}
-            </div>
 
-
-
-
-
-<div>
-    {{#each footer}}
-    {{/each}}
-</div>
