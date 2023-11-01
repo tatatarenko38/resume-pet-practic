@@ -1,27 +1,29 @@
-<div class='m-3'>
-    {{#with navigation}}
-    <div class='card'>
-        <div class='card-body'>
-            <div class='nav'>
-                {{#each links}}
-                <div class='nav-link'>
-                    {{#if href}}
-                    <a href='href'>{{text}}</a>
-                    {{else}}
+<body class="ms-5">
+    <div class='m-3'>
+        {{#with navigation}}
+        <div class='card'>
+            <div class='card-body'>
+                <div class='nav'>
+                    {{#each links}}
+                    <div class='nav-link'>
+                        {{#if href}}
+                        <a href='href'>{{text}}</a>
+                        {{else}}
 
-                    <a href='href' class='nav-link disabled'>{{text}}</a>
+                        <a href='href' class='nav-link disabled'>{{text}}</a>
 
-                    {{/if}}
+                        {{/if}}
+                    </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
         </div>
-    </div>
-    {{/with}}
+        {{/with}}
 
-    <header>
-        <h1 class='mt-5 mb-5'>{{header}}</h1>
-    </header>
+        <header>
+            <h1 class='mt-5 mb-5'>{{header}}</h1>
+        </header>
+    </div>
     <main class="row">
         <div class="col-8">
 
@@ -204,32 +206,32 @@
                     <h2 class="mb-3">{{title}}</h2>
                     {{#with preference}}
                     <div class="col-12">
-                         <div class="fofm-label">{{title}}</div>
+                        <div class="fofm-label">{{title}}</div>
                         {{#each options}}
-                       
+
 
                         <div class="form-check">
-                            
+
                             <label class="form-check-label">
                                 {{this}}
 
                             </label>
                             <input type="radio" class="form-check-input">
-                            
+
                         </div>
                         {{/each}}
 
-                        
+
                     </div>
                     {{/with}}
 
                     {{#with your_expirience}}
-                        <div class="form-label">{{label}}</div>
-                        <input class="form-control">
-                        {{/with}}
+                    <div class="form-label">{{label}}</div>
+                    <input class="form-control">
+                    {{/with}}
 
-                        {{#with purchase_frequency}}
-                        <div>
+                    {{#with purchase_frequency}}
+                    <div>
                         <label class="form-label">{{label}}</label>
                         <select class="form-select">
                             <option selected>{{ placeholder }}</option>
@@ -240,17 +242,17 @@
                             {{/each}}
                         </select>
                     </div>
-                        {{/with}}
+                    {{/with}}
 
-                        {{#with factors}}
-                         <div class="fofm-label">{{title}}</div>
-                         {{#each options}}
-            <div class="form-check">
-                <label class="form-check-label">{{this}}</label>
-                <input type="checkbox" class="form-check-input">
-            </div>
-{{/each}}
-                        {{/with}}
+                    {{#with factors}}
+                    <div class="fofm-label">{{title}}</div>
+                    {{#each options}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{this}}</label>
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                    {{/each}}
+                    {{/with}}
 
 
 
@@ -329,17 +331,19 @@
             </div>
         </div>
     </main>
-     <hr class="my-3">
+    <hr class="my-3">
     <footer>
-        <div class="row">
-        {{#each footer}}
-        {{#each this}}
-        <a href="link" target="_blank">{{text}}</a>
+        <div class="nav">
+            {{#each footer}}
+            <div class="nav-item col-2">
+            {{#each this}}
+            <a href="link" target="_blank" class="nav-link">{{text}}</a>
 
-        {{/each}}
+            {{/each}}
+            </div>
 
-        {{/each}}
+            {{/each}}
         </div>
 
     </footer>
-</div>
+</body>
