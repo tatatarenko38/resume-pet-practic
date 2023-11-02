@@ -2710,8 +2710,8 @@ router.get('/shopreview', function (req, res) {
         tabs: [
           { text: 'Про товар' },
           { text: 'Характеристики' },
-          { text: 'Відгуки',: true },
-        ], isActive
+          { text: 'Відгуки', isActive:true },
+        ], 
         report: {
           title: 'Залиште відгук про товар',
           button: {
