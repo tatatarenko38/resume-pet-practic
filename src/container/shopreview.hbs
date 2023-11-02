@@ -1,0 +1,36 @@
+<body class="ms-5">
+    <div>
+        {{#with navigation}}
+        {{> navshop}}
+        {{/with}}
+    </div>
+    <div class="row">
+        <div class="col-8">
+            {{#with formBlock}}
+            <h1>{{header}}</h1>
+            {{#with rating}}
+            <p>{{title}}: {{value}}</p>
+            {{/with}}
+
+            {{#with actionBlock}}
+            <div class='nav nav-tabs'>
+                {{#each tabs}}
+                <div class='nav-item'>
+                    {{#if isActive}}
+                    <a href='#' class='nav-link active'>{{text}}</a>
+                    {{else}}
+                    <a href='#' class='nav-link'>{{text}}</a>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+
+
+            {{/with}}
+
+
+
+            {{/with}}
+        </div>
+    </div>
+</body>
