@@ -1,21 +1,7 @@
 <body class="ms-4 mt-4">
     <div>
         {{#with navigation}}
-        <div class='card mb-5'>
-            <div class='card-body'>
-
-                <div class='nav'>
-
-                    <div class='nav-link'>
-                        {{#each links}}
-                        <a href='href'>{{text}}</a>
-                        {{/each}}
-                    </div>
-                    <a href='href' class='nav-link disabled'>Disabled</a>
-
-                </div>
-            </div>
-        </div>
+        {{> navshop}}
         {{/with}}
     </div>
 
@@ -250,18 +236,5 @@
     </div>
     {{/with}}
     {{/with}}
-    <footer class="mb-5">
-        <div class="nav">
-            {{#each footer}}
-            <div class="nav-item col-2">
-                {{#each this}}
-                <a href="link" target="_blank" class="nav-link">{{text}}</a>
-
-                {{/each}}
-            </div>
-
-            {{/each}}
-        </div>
-
-    </footer>
+   {{> footershop}}
 </body>
